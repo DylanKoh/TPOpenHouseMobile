@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TPOpenHouseMobile.MainPage"
+             Title="Temasek Polytechnic Open House">
+
+    <StackLayout Padding="10">
+        <!-- Place new controls here -->
+        <Label Text="Login to TP's Open House Application!" 
+           HorizontalOptions="CenterAndExpand"
+               FontSize="Large"/>
+        <Grid Padding="20" ColumnSpacing="5">
+            <Label Text="User ID:"  VerticalOptions="Center"/>
+            <Entry x:Name="entryUserID" Placeholder="User ID" VerticalOptions="Center" Grid.Column="1"/>
+            <Label Text="Password:"  VerticalOptions="Center" Grid.Row="1"/>
+            <Entry x:Name="entryPassword" Placeholder="Password" IsPassword="True" VerticalOptions="Center" Grid.Row="1" Grid.Column="1"/>
+        </Grid>
+        <Button Text="Login" x:Name="btnLogin" Clicked="btnLogin_Clicked"/>
+        <Button Text="Create Account" x:Name="btnCreateAccount" Clicked="btnCreateAccount_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
