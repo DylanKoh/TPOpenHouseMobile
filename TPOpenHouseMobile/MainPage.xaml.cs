@@ -5,6 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using TPOpenHouseMobile;
+using static TPOpenHouseMobile.GlobalClass;
+using Newtonsoft.Json;
+using Xamarin.Forms.Xaml;
 
 namespace TPOpenHouseMobile
 {
@@ -18,14 +22,36 @@ namespace TPOpenHouseMobile
             InitializeComponent();
         }
 
-        private void btnLogin_Clicked(object sender, EventArgs e)
+        private async void btnLogin_Clicked(object sender, EventArgs e)
         {
-
+            if (entryUserID.Text == null || entryPassword.Text == null || entryUserID.Text == "" || entryPassword.Text == "")
+            {
+                await DisplayAlert("Login", "Please check your fields! One or both of the fields are empty!", "Ok");
+            }
+            else
+            {
+                var client = new WebApi();
+                var response = await client.Login($"Users/Login?userID={entryUserID.Text}&password={entryPassword.Text}");
+                if (response == "\"User account does not exist!\"")
+                {
+                    await DisplayAlert("Login", "User account does not exist!", "Ok");
+                }
+                else if (response == "\"Password is incorrect! Please try again!\"")
+                {
+                    await DisplayAlert("Login", "Password is incorrect! Please try again!", "Ok");
+                }
+                else
+                {
+                    var userData = JsonConvert.DeserializeObject<User>(response);
+                    await DisplayAlert("Login", $"Welcome {userData.userName}!", "Ok");
+                }
+            }
+            
         }
 
-        private void btnCreateAccount_Clicked(object sender, EventArgs e)
+        private async void btnCreateAccount_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new CreateAccount());
         }
     }
 }
