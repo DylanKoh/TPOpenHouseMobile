@@ -12,7 +12,7 @@ namespace TPOpenHouseMobile
             public string userID { get; set; }
             public string userName { get; set; }
             public string password { get; set; }
-            public int Points { get; set; }
+            public int points { get; set; }
 
         }
     }

@@ -31,7 +31,7 @@ namespace TPOpenHouseMobile
             }
             else
             {
-                var newUser = new User() { userName = entryName.Text, userID = entryUserID.Text, password = entryPassword.Text, Points = 0 };
+                var newUser = new User() { userName = entryName.Text, userID = entryUserID.Text, password = entryPassword.Text, points = 0 };
                 var client = new WebApi();
                 var JsonData = JsonConvert.SerializeObject(newUser);
                 var response = await client.Post("Users/Create", JsonData);

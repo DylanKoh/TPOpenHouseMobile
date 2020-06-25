@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TPOpenHouseMobile.MainMenu">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label Text="Main Menu"
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="Large"/>
+            <StackLayout Padding="10">
+                <Button x:Name="btnEventOutline" Clicked="btnEventOutline_Clicked" Text="Event Outline"/>
+                <Button x:Name="btnCourses" Clicked="btnCourses_Clicked" Text="Learn More about IIT courses!"/>
+                <Button x:Name="btnQuizzes" Clicked="btnQuizzes_Clicked" Text="Quizzes"/>
+                <Button x:Name="btnRewards" Clicked="btnRewards_Clicked" Text="Redeem Rewards"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
