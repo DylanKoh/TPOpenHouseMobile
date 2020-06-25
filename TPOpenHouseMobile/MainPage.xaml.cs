@@ -31,7 +31,7 @@ namespace TPOpenHouseMobile
             else
             {
                 var client = new WebApi();
-                var response = await client.Login($"Users/Login?userID={entryUserID.Text}&password={entryPassword.Text}");
+                var response = await client.Post($"Users/Login?userID={entryUserID.Text}&password={entryPassword.Text}", "");
                 if (response == "\"User account does not exist!\"")
                 {
                     await DisplayAlert("Login", "User account does not exist!", "Ok");

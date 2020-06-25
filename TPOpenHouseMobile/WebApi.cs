@@ -18,22 +18,23 @@ namespace TPOpenHouseMobile
             //httpClient.DefaultRequestHeaders.Add("Content-Type", "application/json");
         }
 
-        public async Task<string> Create(string urlName, string JsonData)
+        public async Task<string> Post(string urlName, string JsonData)
         {
-            var combinedUrl = url + urlName;
-            var content = new StringContent(JsonData, Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync(combinedUrl, content);
-            var result = response.Content.ReadAsStringAsync().Result;
-            Console.WriteLine(result);
-            return result;
-        }
-
-        public async Task<string> Login(string urlName)
-        {
-            var combinedUrl = url + urlName;
-            var response = await httpClient.PostAsync(combinedUrl, new StringContent(""));
-            var result = response.Content.ReadAsStringAsync().Result;
-            return result;
+            if (JsonData == "")
+            {
+                var combinedUrl = url + urlName;
+                var response = await httpClient.PostAsync(combinedUrl, new StringContent(JsonData));
+                var result = response.Content.ReadAsStringAsync().Result;
+                return result;
+            }
+            else
+            {
+                var combinedUrl = url + urlName;
+                var content = new StringContent(JsonData, Encoding.UTF8, "application/json");
+                var response = await httpClient.PostAsync(combinedUrl, content);
+                var result = response.Content.ReadAsStringAsync().Result;
+                return result;
+            }
         }
     }
 }
