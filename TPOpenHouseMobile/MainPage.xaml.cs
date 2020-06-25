@@ -44,6 +44,7 @@ namespace TPOpenHouseMobile
                 {
                     var userData = JsonConvert.DeserializeObject<User>(response);
                     await DisplayAlert("Login", $"Welcome {userData.userName}!", "Ok");
+                    await Navigation.PushAsync(new MainMenu(userData));
                 }
             }
             

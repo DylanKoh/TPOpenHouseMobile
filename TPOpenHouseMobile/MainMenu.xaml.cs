@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static TPOpenHouseMobile.GlobalClass;
 
 namespace TPOpenHouseMobile
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainMenu : ContentPage
     {
-        public MainMenu()
+        User _user;
+        public MainMenu(User user)
         {
             InitializeComponent();
+            _user = user;
         }
 
         private void btnEventOutline_Clicked(object sender, EventArgs e)
