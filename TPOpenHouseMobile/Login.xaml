@@ -12,12 +12,12 @@
         <Label Text="Login to TP's Open House Application!" 
            HorizontalOptions="CenterAndExpand"
                FontSize="Large"/>
-        <Grid Padding="20" ColumnSpacing="5">
+        <StackLayout Padding="10">
             <Label Text="User ID:"  VerticalOptions="Center"/>
-            <Entry x:Name="entryUserID" Placeholder="User ID" VerticalOptions="Center" Grid.Column="1"/>
-            <Label Text="Password:"  VerticalOptions="Center" Grid.Row="1"/>
-            <Entry x:Name="entryPassword" Placeholder="Password" IsPassword="True" VerticalOptions="Center" Grid.Row="1" Grid.Column="1"/>
-        </Grid>
+            <Entry x:Name="entryUserID" Placeholder="User ID" VerticalOptions="Center"/>
+            <Label Text="Password:"  VerticalOptions="Center" />
+            <Entry x:Name="entryPassword" Placeholder="Password" IsPassword="True" VerticalOptions="Center" />
+        </StackLayout>
         <Button Text="Login" x:Name="btnLogin" Clicked="btnLogin_Clicked"/>
         <Button Text="Create Account" x:Name="btnCreateAccount" Clicked="btnCreateAccount_Clicked"/>
     </StackLayout>

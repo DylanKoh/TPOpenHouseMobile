@@ -18,6 +18,7 @@ namespace TPOpenHouseMobile
         {
             InitializeComponent();
             _user = user;
+            this.Title = $"Welcome {_user.userName}!";
         }
 
         private void btnEventOutline_Clicked(object sender, EventArgs e)
