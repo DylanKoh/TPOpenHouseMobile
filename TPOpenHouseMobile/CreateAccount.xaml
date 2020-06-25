@@ -4,12 +4,24 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TPOpenHouseMobile.CreateAccount">
+             x:Class="TPOpenHouseMobile.CreateAccount"
+             Title="Temasek Polytechnic Open House">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="10">
+            <Label Text="Create an Account!"
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="Large"/>
+            <StackLayout Padding="10">
+                <Label Text="Full Name:"/>
+                <Entry x:Name="entryName" Placeholder="Full Name"/>
+                <Label Text="User ID:"/>
+                <Entry x:Name="entryUserID" Placeholder="User ID"/>
+                <Label Text="Password:"/>
+                <Entry IsPassword="True" x:Name="entryPassword" Placeholder="Password"/>
+                <Label Text="Re-enter Password:"/>
+                <Entry IsPassword="True" x:Name="entryRePassword" Placeholder="Re-enter Password"/>
+            </StackLayout>
+            <Button x:Name="btnCreate" Clicked="btnCreate_Clicked" Text="Create Account"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
