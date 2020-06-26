@@ -31,9 +31,9 @@ namespace TPOpenHouseMobile
             await Navigation.PushAsync(new Courses());
         }
 
-        private void btnQuizzes_Clicked(object sender, EventArgs e)
+        private async void btnQuizzes_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new QuestionMenu(_user));
         }
 
         private void btnRewards_Clicked(object sender, EventArgs e)
