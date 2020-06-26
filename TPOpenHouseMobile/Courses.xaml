@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TPOpenHouseMobile.Courses"
+             Title="Courses in IIT">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Button x:Name="btnAppliedAI" Text="Applied Artificial Intelligence (T69)" Clicked="btnAppliedAI_Clicked"/>
+            <Button x:Name="btnBDA" Text="Big Data and Analytics (T60)" Clicked="btnBDA_Clicked"/>
+            <Button x:Name="btnCommonICT" Text="Common ICT Programme (T63)" Clicked="btnCommonICT_Clicked"/>
+            <Button x:Name="btnCDF" Text="Cybersecurity and Digital Forensics (T62)" Clicked="btnCDF_Clicked"/>
+            <Button x:Name="btnFBI" Text="Financial Business Informatics (T17)" Clicked="btnFBI_Clicked"/>
+            <Button x:Name="btnGDD" Text="Game Design and Development (T58)" Clicked="btnGDD_Clicked"/>
+            <Button x:Name="btnIT" Text="Information Technology (T30)" Clicked="btnIT_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

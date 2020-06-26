@@ -26,9 +26,9 @@ namespace TPOpenHouseMobile
 
         }
 
-        private void btnCourses_Clicked(object sender, EventArgs e)
+        private async void btnCourses_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new Courses());
         }
 
         private void btnQuizzes_Clicked(object sender, EventArgs e)
