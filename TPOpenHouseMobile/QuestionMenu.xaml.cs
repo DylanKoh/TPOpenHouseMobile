@@ -12,6 +12,7 @@ namespace TPOpenHouseMobile
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class QuestionMenu : ContentPage
     {
+        //Comment in QuestionMenu
         public QuestionMenu()
         {
             InitializeComponent();
