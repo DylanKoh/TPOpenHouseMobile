@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TPOpenHouseMobile.EventOutline"
+             Title="Event Outline">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label x:Name="lblDay"
+                FontSize="Large"
+                HorizontalOptions="CenterAndExpand"/>
+            <ListView HasUnevenRows="True" x:Name="lvEvent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding eventName}" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding eventVenue}" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding eventTime}" HorizontalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid Padding="10">
+                <Button x:Name="btnPrevious" Text="Previous Day" Clicked="btnPrevious_Clicked" />
+                <Button x:Name="btnNext" Text="Next Day" Clicked="btnNext_Clicked" Grid.Column="1"/>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

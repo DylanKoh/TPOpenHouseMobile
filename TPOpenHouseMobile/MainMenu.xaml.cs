@@ -21,9 +21,9 @@ namespace TPOpenHouseMobile
             this.Title = $"Welcome {_user.userName}!";
         }
 
-        private void btnEventOutline_Clicked(object sender, EventArgs e)
+        private async void btnEventOutline_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new EventOutline());
         }
 
         private async void btnCourses_Clicked(object sender, EventArgs e)

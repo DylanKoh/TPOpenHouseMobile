@@ -15,5 +15,13 @@ namespace TPOpenHouseMobile
             public int points { get; set; }
 
         }
+        public class Event
+        {
+            public int ID { get; set; }
+            public string eventName { get; set; }
+            public string eventVenue { get; set; }
+            public DateTime eventTime { get; set; }
+        }
+
     }
 }
