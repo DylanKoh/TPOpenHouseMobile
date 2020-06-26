@@ -68,10 +68,6 @@ namespace TPOpenHouseMobile
             var client = new WebApi();
             var response = await client.Post("Events", "");
             _event = JsonConvert.DeserializeObject<List<Event>>(response);
-            foreach (var item in _event)
-            {
-                Console.WriteLine(item.eventTime);
-            }
             numberOfDays = (from x in _event
                             group x by x.eventTime.Date into y
                             select y.Key).Count();
