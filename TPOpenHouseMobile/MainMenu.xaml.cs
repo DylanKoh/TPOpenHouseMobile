@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,9 +37,12 @@ namespace TPOpenHouseMobile
             await Navigation.PushAsync(new QuestionMenu(_user));
         }
 
-        private void btnRewards_Clicked(object sender, EventArgs e)
+        private async void btnRewards_Clicked(object sender, EventArgs e)
         {
-
+            var client = new WebApi();
+            var response = await client.Post($"Users/GetSpecificUser?userID={_user.userID}", "");
+            _user = JsonConvert.DeserializeObject<User>(response);
+            await Navigation.PushAsync(new EventOutline());
         }
     }
 }

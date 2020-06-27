@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +12,10 @@ using static TPOpenHouseMobile.GlobalClass;
 namespace TPOpenHouseMobile
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class QuestionMenu : ContentPage
+    public partial class TPQuiz : ContentPage
     {
         User _user;
-        //Comment in QuestionMenu
-        public QuestionMenu(User user)
+        public TPQuiz(User user)
         {
             InitializeComponent();
             _user = user;

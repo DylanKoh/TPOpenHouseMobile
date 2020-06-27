@@ -23,5 +23,26 @@ namespace TPOpenHouseMobile
             public DateTime eventTime { get; set; }
         }
 
+        public class Question
+        {
+            public int ID { get; set; }
+            public string AnswerOne { get; set; }
+            public string AnswerTwo { get; set; }
+            public string AnswerThree { get; set; }
+            public string AnswerFour { get; set; }
+            public string Correct { get; set; }
+            public string questionCategory { get; set; }
+            public string questionString { get; set; }
+        }
+
+        public class UserResponse
+        {
+            public int ID { get; set; }
+            public string userIDFK { get; set; }
+            public int questionIDFK { get; set; }
+            public string userAnswer { get; set; }
+            public bool isCorrect { get; set; }
+
+        }
     }
 }
