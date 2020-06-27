@@ -44,5 +44,27 @@ namespace TPOpenHouseMobile
             public bool isCorrect { get; set; }
 
         }
+        public class Reward
+        {
+            public System.Guid ID { get; set; }
+            public string rewardName { get; set; }
+            public int pointsRequired { get; set; }
+            public Nullable<bool> linkedToUser { get; set; }
+        }
+        public class UserClaim
+        {
+            public int ID { get; set; }
+            public string userIDFK { get; set; }
+            public System.Guid rewardsIDFK { get; set; }
+            public bool isClaimed { get; set; }
+
+        }
+
+        public class RequiredPoint
+        {
+            public string RewardName { get; set; }
+            public int RequiredPoints { get; set; }
+        }
+
     }
 }

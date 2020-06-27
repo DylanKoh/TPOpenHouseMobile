@@ -42,7 +42,7 @@ namespace TPOpenHouseMobile
             var client = new WebApi();
             var response = await client.Post($"Users/GetSpecificUser?userID={_user.userID}", "");
             _user = JsonConvert.DeserializeObject<User>(response);
-            await Navigation.PushAsync(new EventOutline());
+            await Navigation.PushAsync(new RewardsMainMenu(_user));
         }
     }
 }

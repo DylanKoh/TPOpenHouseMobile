@@ -18,9 +18,10 @@ namespace TPOpenHouseMobile.Droid
             ToolbarResource = Resource.Layout.Toolbar;
             Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
             base.OnCreate(savedInstanceState);
-
+           
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            ZXing.Net.Mobile.Forms.Android.Platform.Init();
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
