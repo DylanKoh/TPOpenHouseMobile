@@ -22,6 +22,19 @@ namespace TPOpenHouseMobile
             this.Title = $"Welcome {_user.userName}!";
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await RefreshUser();
+        }
+
+        private async Task RefreshUser()
+        {
+            var client = new WebApi();
+            var response = await client.Post($"Users/GetSpecificUser?userID={_user.userID}", "");
+            _user = JsonConvert.DeserializeObject<User>(response);
+        }
+
         private async void btnEventOutline_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EventOutline());
@@ -39,9 +52,6 @@ namespace TPOpenHouseMobile
 
         private async void btnRewards_Clicked(object sender, EventArgs e)
         {
-            var client = new WebApi();
-            var response = await client.Post($"Users/GetSpecificUser?userID={_user.userID}", "");
-            _user = JsonConvert.DeserializeObject<User>(response);
             await Navigation.PushAsync(new RewardsMainMenu(_user));
         }
     }

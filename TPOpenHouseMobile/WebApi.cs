@@ -36,5 +36,13 @@ namespace TPOpenHouseMobile
                 return result;
             }
         }
+
+        public async Task<bool> PostStatus(string urlName, string JsonData)
+        {
+            var combinedUrl = url + urlName;
+            var response = await httpClient.PostAsync(combinedUrl, new StringContent(JsonData));
+            var result = response.IsSuccessStatusCode;
+            return result;
+        }
     }
 }

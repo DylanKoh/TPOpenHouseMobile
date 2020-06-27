@@ -20,13 +20,21 @@ namespace TPOpenHouseMobile
         {
             InitializeComponent();
             _user = user;
-            lblPoints.Text = _user.points.ToString();
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            await RefreshUser();
             await LoadPoints();
+            lblPoints.Text = _user.points.ToString();
+        }
+
+        private async Task RefreshUser()
+        {
+            var client = new WebApi();
+            var response = await client.Post($"Users/GetSpecificUser?userID={_user.userID}", "");
+            _user = JsonConvert.DeserializeObject<User>(response);
         }
 
         private async Task LoadPoints()
@@ -59,7 +67,7 @@ namespace TPOpenHouseMobile
                 {
                     await DisplayAlert("Rewards", $"There are no more {rewardName} vouchers left!", "Ok");
                 }
-                else if (newRewardJson == "\"Unable to claim reward!Insufficient points!\"")
+                else if (newRewardJson == "\"Unable to claim reward! Insufficient points!\"")
                 {
                     await DisplayAlert("Rewards", "Unable to claim reward! Insufficient points!", "Ok");
                 }
@@ -104,7 +112,7 @@ namespace TPOpenHouseMobile
                 {
                     await DisplayAlert("Rewards", $"There are no more {rewardName} vouchers left!", "Ok");
                 }
-                else if (newRewardJson == "\"Unable to claim reward!Insufficient points!\"")
+                else if (newRewardJson == "\"Unable to claim reward! Insufficient points!\"")
                 {
                     await DisplayAlert("Rewards", "Unable to claim reward! Insufficient points!", "Ok");
                 }
