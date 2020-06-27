@@ -6,10 +6,24 @@
              mc:Ignorable="d"
              x:Class="TPOpenHouseMobile.TPQuiz">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="10">
+            <Label Text="Quiz about Courses in IIT"
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="Large"/>
+            <StackLayout Padding="10">
+                <Label x:Name="lblQuestion" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                <Grid Padding="5">
+                    <RadioButton x:Name="rbAnswerOne" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label x:Name="lblAnswerOne" VerticalOptions="Center" Grid.Column="1" />
+                    <RadioButton x:Name="rbAnswerTwo" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="1"/>
+                    <Label x:Name="lblAnswerTwo" VerticalOptions="Center" Grid.Column="1" Grid.Row="1" />
+                    <RadioButton x:Name="rbAnswerThree" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="2"/>
+                    <Label x:Name="lblAnswerThree" VerticalOptions="Center" Grid.Column="1" Grid.Row="2" />
+                    <RadioButton x:Name="rbAnswerFour" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="3"/>
+                    <Label x:Name="lblAnswerFour" VerticalOptions="Center" Grid.Column="1" Grid.Row="3" />
+                </Grid>
+            </StackLayout>
+            <Button Text="Submit" x:Name="btnSubmit" Clicked="btnSubmit_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
